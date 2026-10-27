@@ -1,0 +1,17 @@
+node_modules
+.next
+.git
+.env
+.env.*
+!.env.example
+artifacts
+.local-backups
+private-uploads
+.translation-cache
+public/media
+test-results
+playwright-report
+tmp
+temp
+.tmp-*
+*.tsbuildinfo

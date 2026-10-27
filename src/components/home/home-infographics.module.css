@@ -1,0 +1,99 @@
+.workflow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 28px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.workflowStep {
+  position: relative;
+  min-width: 0;
+}
+
+.workflowStep:not(:last-child)::after {
+  position: absolute;
+  z-index: 0;
+  inset-block-start: 20px;
+  inset-inline-start: 42px;
+  inset-inline-end: calc(-1 * clamp(16px, 2vw, 28px));
+  border-top: 1px solid rgb(198 230 220 / 46%);
+  content: '';
+}
+
+.workflowMarker {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 22px;
+  border: 1px solid #8fb7a6;
+  border-radius: 50%;
+  background: var(--background-inverse);
+  color: var(--brand-accent);
+  font:
+    500 10px/1 var(--font-geist-mono),
+    monospace;
+  letter-spacing: 0.06em;
+}
+
+.workflowCopy h3 {
+  margin: 0 0 8px;
+  color: var(--text-inverse);
+  font-size: clamp(16px, 1.4vw, 20px);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.workflowCopy p {
+  max-width: 19ch;
+  margin: 0 !important;
+  color: #c6d2cd;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+@media (max-width: 1000px) {
+  .workflow {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .workflowStep {
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 16px;
+    padding-bottom: 24px;
+  }
+
+  .workflowStep:not(:last-child)::after {
+    inset-block-start: 42px;
+    inset-block-end: 0;
+    inset-inline-start: 20px;
+    inset-inline-end: auto;
+    height: auto;
+    border-top: 0;
+    border-inline-start: 1px solid rgb(198 230 220 / 46%);
+  }
+
+  .workflowStep:last-child {
+    padding-bottom: 0;
+  }
+
+  .workflowMarker {
+    margin: 0;
+  }
+
+  .workflowCopy {
+    padding-top: 2px;
+  }
+}
+
+@media (max-width: 650px) {
+  .workflowCopy p {
+    max-width: 36ch;
+  }
+}

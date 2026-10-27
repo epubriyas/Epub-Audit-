@@ -1,0 +1,46 @@
+build
+dist/
+media/
+node_modules
+.DS_Store
+.env
+.next
+next-env.d.ts
+.vercel
+
+# Payload default media upload directory
+public/media/
+
+public/robots.txt
+public/sitemap*.xml
+
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+# Local database backups contain private records; never commit.
+.local-backups/
+private-uploads/
+
+backups/
+*.tsbuildinfo
+.translation-cache/
+
+.env*
+/test.env
+
+# Keep setup templates available in a fresh clone.
+!.env.example
+!deployment/.env.production.example
+
+# Generated audits, screenshots, document extracts and local scratch files.
+/artifacts/
+/tmp/
+/temp/
+/.tmp-*
+*.log
+*.bak
+*.orig
