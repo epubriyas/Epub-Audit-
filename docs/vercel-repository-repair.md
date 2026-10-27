@@ -29,3 +29,9 @@ Ignored private environment files, local dependencies, generated build outputs, 
 
 No push, redeploy or production setting change has been performed. Pushing this corrected checkout to main will trigger the configured automatic Vercel deployment. Await user approval under the earlier instruction not to deploy automatically. Live Vercel installation/build verification remains pending until that deployment runs. The previous Ready deployment remains available.
 
+
+## Follow-up deployment at 16:32
+
+Remote main advanced to 01e59d8 (deployment issue fix), adding another mode-160000 entry named epub-audit pointing to local repair commit 6dabefa. It still had no root package.json or lockfile. The repair had been committed from the parent folder rather than pushed from the application repository.
+
+Merged remote main into the corrected checkout and excluded both nested Git pointers. The resulting commit retains the already tested application tree and has remote main as an ancestor, allowing a normal fast-forward push without force. Run any release push specifically from D:/co/epub-audit. Do not run it from D:/co.
